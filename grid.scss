@@ -20,7 +20,6 @@ $grid-gutter:  20px !default; 	// px only here
   @return (100%/$grid-columns)*$columns;
 }
 
-
 *{
   &,&:before,&:after{
     -webkit-box-sizing: border-box;
@@ -31,6 +30,7 @@ $grid-gutter:  20px !default; 	// px only here
 
 .container{
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 .row {
@@ -42,7 +42,6 @@ $grid-gutter:  20px !default; 	// px only here
   vertical-align: top;
 
   &:after {
-    /* Or @extend clearfix */
     content: "";
     display: table;
     clear: both;
@@ -54,72 +53,60 @@ $grid-gutter:  20px !default; 	// px only here
   }
 }
 
-/* Opt-in outside padding */
-.row-pad {
-  padding: $grid-gutter 0 $grid-gutter $grid-gutter;
-  [class*='col-']:last-of-type {
-    padding-right: $grid-gutter;
-  }
-}
-
 [class*='col-'] {
   text-align: left;
   display: block;
   float: left;
   width: 100%;
   margin: 0 0;
-  padding:20px $grid-gutter;
-  //padding-right: $grid-gutter;
-  background: lightgrey;
-  border:1px solid #ccc;
+  padding-right: $grid-gutter;
 
   .row &:last-of-type {
     padding-right: 0;
   }
 }
 
-/* Default */
+/* Default and Extra small devices (phones, 768px and up) */
 @for $i from 1 through $grid-columns {
-    .col-#{$i} {
-    	width: calccol($i);
-    }
+  .col-#{$i} {
+  	width: calccol($i);
+  }
 }
 
-/* Extra small devices (phones, 768px and up) */
-@media (max-width: 768px){
+@media (max-width: 480px){
   .container{
     max-width: 100%;
   }
 
-	@for $i from 1 through $grid-columns {
-	    .xs-col-#{$i} {
-	    	width: calccol($i);
-	    }
-	}
+  @for $i from 1 through $grid-columns {
+    .xs-col-#{$i} {
+      width: calccol($i);
+    }
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px){
+@media (min-width: 768px){ //and (max-width: 991px){
   .container{
     max-width: 750px;
   }
 
   @for $i from 1 through $grid-columns {
-	    .sm-col-#{$i} {
-	    	width: calccol($i);
-	    }
+    .sd-col-#{$i} {
+    	width: calccol($i);
+    }
 	}
 }
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px){
+@media (min-width: 992px){// and (max-width: 1199px){
   .container{
     max-width: 970px;
   }
 
   @for $i from 1 through $grid-columns {
-	    .md-col-#{$i} {
-	    	width: calccol($i);
-	    }
+    .md-col-#{$i} {
+    	width: calccol($i);
+    }
 	}
 }
 /* Large devices (large desktops, 1200px and up) */
@@ -129,8 +116,8 @@ $grid-gutter:  20px !default; 	// px only here
   }
   
   @for $i from 1 through $grid-columns {
-	    .lg-col-#{$i} {
-	    	width: calccol($i);
-	    }
+    .lg-col-#{$i} {
+    	width: calccol($i);
+    }
 	}
 }

@@ -3,77 +3,103 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Grid Test</title>
+	<title>mGrid - Example</title>
 	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
 	
+	<h1>mGrid - Example</h1>
+	<p>Easy to use, mobile first responsive x-column grid. Click a column to see the applied classes.</p>
+	<dl>
+		<dt>col-X</dt>
+		<dd><b>Default width</b>: Define this first. It is always used if non of the following classes is assigned.</dd>
+	  <dt>xs-col-X</dt>
+	  <dd>For very small devices; Smartphones.</dd>
+	  <dt>sd-col-X</dt>
+	  <dd>For small devices; Big Smartphones, Tablets.</dd>
+	  <dt>md-col-X</dt>
+	  <dd>For medium devices; Notebooks, Normal Desktops.</dd>
+	  <dt>lg-col-X</dt>
+	  <dd>For large devices; Big Desktops, TVs.</dd>
+	</dl>
+
 	<div class="row">
-		<div class="col-1 xs-col-12">col-1 xs-col-12</div>
-		<div class="col-1 xs-col-12">col-1 xs-col-12</div>
-		<div class="col-1 xs-col-6">col-1 xs-col-6</div>
-		<div class="col-1 xs-col-6">col-1 xs-col-6</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
-		<div class="col-1">1</div>
+		<h2>Simple 2 Column Layout</h2>
+		<div class="col-12">100% always</div>
+		<div class="col-6">50% always</div>
+		<div class="col-6">50% always</div>
 	</div>
+
 	<div class="row">
-		<div class="col-2">2</div>
-		<div class="col-2">2</div>
-		<div class="col-2">2</div>
-		<div class="col-2">2</div>
-		<div class="col-2">2</div>
-		<div class="col-2">2</div>
+		<h2>"Flexible 3"</h2>
+		<div class="col-12 sd-col-6 md-col-4">100% - 50% on >sd - 40% > md</div>
+		<div class="col-12 sd-col-6 md-col-4">100% - 50% on >sd - 40% > md</div>
+		<div class="col-12 sd-col-12 md-col-4">100% - 100% on >sd - 40% > md</div>
 	</div>
+
 	<div class="row">
-		<div class="col-3">3</div>
-		<div class="col-3">3</div>
-		<div class="col-3">3</div>
-		<div class="col-3">3</div>
+		<h2>"Flexible 4"</h2>
+		<div class="col-6 sd-col-4 md-col-3">50% - 30% on >sd - 25% > md</div>
+		<div class="col-6 sd-col-4 md-col-3">50% - 30% on >sd - 25% > md</div>
+		<div class="col-12 xs-col-6 sd-col-4 md-col-3">100% - 30% on >sd - 25% > md</div>
+		<div class="col-12 xs-col-6 sd-col-12 md-col-3">100% - 100% on >sd - 25% > md</div>
 	</div>
+	
 	<div class="row">
+		<h2>Nesting columns</h2>
+		<div class="col-6">
+			<div class="col-6">50%</div>
+			<div class="col-6">50%</div>
+		</div>
+		<div class="col-6">50%</div>
+	</div>
+
+	<div class="row">
+		<h2>Multiple rows</h2>
+		<div class="col-2">2</div>
+		<div class="col-2">2</div>
+		<div class="col-2">2</div>
+		<div class="col-2">2</div>
+		<div class="col-2">2</div>
+		<div class="col-2">2</div>
+		<div class="col-3">3</div>
+		<div class="col-3">3</div>
+		<div class="col-3">3</div>
+		<div class="col-3">3</div>
 		<div class="col-4">4</div>
 		<div class="col-4">4</div>
 		<div class="col-4">4</div>
-	</div>
-	<div class="row">
 		<div class="col-5">5</div>
 		<div class="col-5">5</div>
 		<div class="col-2">2</div>
-	</div>
-	<div class="row">
 		<div class="col-6">6</div>
 		<div class="col-6">6</div>
-	</div>
-	<div class="row">
 		<div class="col-7">7</div>
 		<div class="col-5">5</div>
-	</div>
-	<div class="row">
 		<div class="col-8">8</div>
 		<div class="col-4">4</div>
-	</div>
-	<div class="row">
 		<div class="col-9">9</div>
 		<div class="col-3">3</div>
-	</div>
-	<div class="row">
 		<div class="col-10">10</div>
 		<div class="col-2">2</div>
-	</div>
-	<div class="row">
 		<div class="col-11">11</div>
 		<div class="col-1">1</div>
-	</div>
-	<div class="row">
 		<div class="col-12">12</div>
 	</div>
 </div>
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+	/* Write class in Title */
+	$('.row div').each(function(){
+		$(this).attr('title',$(this).attr('class'));
+	});
+	/* Show class in html onclick */
+	$('.row div').click(function() {
+		  $(this).html('<span>'+$(this).attr('class')+'</span>');	
+	});
+	</script>
 </body>
 </html>

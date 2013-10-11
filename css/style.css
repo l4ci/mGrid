@@ -1,0 +1,55 @@
+/**
+ * Stuff for the example page
+ *
+ * DONT INCLUDE THIS IF YOU ONLY WANT TO USE THE GRID
+ *
+ **/
+*{
+	font-family: 'Helvetica Neue',Helvetica,sans-serif;
+	color:#072F44;
+}
+code{
+	font-family: monospace;
+	padding: 3px 5px;
+	background: #e6e6e6;
+}
+dt{
+	display: inline-block;
+	font-family: monospace;
+	padding: 3px 5px;
+	background: #e6e6e6;
+}
+dd{
+	display: block;
+	margin:0 0 20px 0;
+	padding:10px;
+	border:1px solid #e6e6e6;
+}
+.row{
+	margin:4em 0;
+	background-color: #AADBF5;
+}
+[class*='col-'] {
+	background-color: #D5EEFB;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:20px;
+}
+[class*='col-']:nth-of-type(even){
+	background: #cbe1ee;
+}
+
+.row span{
+	font-style: italic;
+	font-size:12px;
+}
+
+h1{
+	font-size: 3em;
+	padding-bottom:1rem;
+	border-bottom:1px solid #e6e6e6;
+}
+h2{
+	padding:0.8em 0 0 0;
+	text-align: center;
+}
