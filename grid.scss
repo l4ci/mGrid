@@ -1,3 +1,26 @@
+/**
+ *
+ * mGrid
+ * Basic responsive mobile first x-column grid system.
+ * 
+ * @url https://github.com/l4ci/mGrid
+ * @author Volker Otto <hello@volkerotto.net>
+ * 
+ **/ 
+
+$grid-columns: 12 	!default; 	// 12, 16, whatever you like
+$grid-gutter:  20px !default; 	// px only here
+
+/**
+ * Calculate column width in %
+ * @param  {integer} $columns 
+ * @return {integer} %
+ */
+@function calccol($columns){
+  @return (100%/$grid-columns)*$columns;
+}
+
+
 *{
   &,&:before,&:after{
     -webkit-box-sizing: border-box;
@@ -5,8 +28,6 @@
     box-sizing: border-box;
   }
 }
-
-$grid-gutter: 20px !default;
 
 .container{
   width: 100%;
@@ -58,83 +79,23 @@ $grid-gutter: 20px !default;
 }
 
 /* Default */
-.col-1{
-  width: 8.333333333%;
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+    	width: calccol($i);
+    }
 }
-.col-2{
-  width: 16.666666667%;
-}
-.col-3{
-  width: 25%;
-}
-.col-4 {
-  width: 33.333333333%;
-}
-.col-5 {
-  width: 41.666666667%;
-}
-.col-6{
-  width: 50%;
-}
-.col-7{
-  width: 58.333333333%;
-}
-.col-8 {
-  width: 66.666666667%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.333333333%;
-}
-.col-11 {
-  width: 91.666666667%;
-}
-.col-12 {
-  width: 100%;
-}
+
 /* Extra small devices (phones, 768px and up) */
 @media (max-width: 768px){
   .container{
     max-width: 100%;
   }
-  .xs-col-1{
-    width: 8.333333333%;
-  }
-  .xs-col-2{
-    width: 16.666666667%;
-  }
-  .xs-col-3{
-    width: 25%;
-  }
-  .xs-col-4 {
-    width: 33.333333333%;
-  }
-  .xs-col-5 {
-    width: 41.666666667%;
-  }
-  .xs-col-6{
-    width: 50%;
-  }
-  .xs-col-7{
-    width: 58.333333333%;
-  }
-  .xs-col-8 {
-    width: 66.666666667%;
-  }
-  .xs-col-9 {
-    width: 75%;
-  }
-  .xs-col-10 {
-    width: 83.333333333%;
-  }
-  .xs-col-11 {
-    width: 91.666666667%;
-  }
-  .xs-col-12 {
-    width: 100%;
-  }
+
+	@for $i from 1 through $grid-columns {
+	    .xs-col-#{$i} {
+	    	width: calccol($i);
+	    }
+	}
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -142,124 +103,34 @@ $grid-gutter: 20px !default;
   .container{
     max-width: 750px;
   }
-  .sm-col-1{
-    width: 8.333333333%;
-  }
-  .sm-col-2{
-    width: 16.666666667%;
-  }
-  .sm-col-3{
-    width: 25%;
-  }
-  .sm-col-4 {
-    width: 33.333333333%;
-  }
-  .sm-col-5 {
-    width: 41.666666667%;
-  }
-  .sm-col-6{
-    width: 50%;
-  }
-  .sm-col-7{
-    width: 58.333333333%;
-  }
-  .sm-col-8 {
-    width: 66.666666667%;
-  }
-  .sm-col-9 {
-    width: 75%;
-  }
-  .sm-col-10 {
-    width: 83.333333333%;
-  }
-  .sm-col-11 {
-    width: 91.666666667%;
-  }
-  .sm-col-12 {
-    width: 100%;
-  }
+
+  @for $i from 1 through $grid-columns {
+	    .sm-col-#{$i} {
+	    	width: calccol($i);
+	    }
+	}
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px){
   .container{
     max-width: 970px;
   }
-  .md-col-1{
-    width: 8.333333333%;
-  }
-  .md-col-2{
-    width: 16.666666667%;
-  }
-  .md-col-3{
-    width: 25%;
-  }
-  .md-col-4 {
-    width: 33.333333333%;
-  }
-  .md-col-5 {
-    width: 41.666666667%;
-  }
-  .md-col-6{
-    width: 50%;
-  }
-  .md-col-7{
-    width: 58.333333333%;
-  }
-  .md-col-8 {
-    width: 66.666666667%;
-  }
-  .md-col-9 {
-    width: 75%;
-  }
-  .md-col-10 {
-    width: 83.333333333%;
-  }
-  .md-col-11 {
-    width: 91.666666667%;
-  }
-  .md-col-12 {
-    width: 100%;
-  }
+
+  @for $i from 1 through $grid-columns {
+	    .md-col-#{$i} {
+	    	width: calccol($i);
+	    }
+	}
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px){
   .container{
     max-width: 1170px;
   }
-  .lg-col-1{
-    width: 8.333333333%;
-  }
-  .lg-col-2{
-    width: 16.666666667%;
-  }
-  .lg-col-3{
-    width: 25%;
-  }
-  .lg-col-4 {
-    width: 33.333333333%;
-  }
-  .lg-col-5 {
-    width: 41.666666667%;
-  }
-  .lg-col-6{
-    width: 50%;
-  }
-  .lg-col-7{
-    width: 58.333333333%;
-  }
-  .lg-col-8 {
-    width: 66.666666667%;
-  }
-  .lg-col-9 {
-    width: 75%;
-  }
-  .lg-col-10 {
-    width: 83.333333333%;
-  }
-  .lg-col-11 {
-    width: 91.666666667%;
-  }
-  .lg-col-12 {
-    width: 100%;
-  }
+  
+  @for $i from 1 through $grid-columns {
+	    .lg-col-#{$i} {
+	    	width: calccol($i);
+	    }
+	}
 }
