@@ -1,6 +1,6 @@
 # mGrid
 
-Basic responsive mobile first x-column grid system.
+Basic responsive mobile first x-column grid system. Download and open the index.html for some examples.
 
 ## Usage
     .col-1 // global
