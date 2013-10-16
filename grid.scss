@@ -72,10 +72,10 @@ $grid-gutter:  20px !default; 	// px only here
   	width: calccol($i);
   }
 }
-.hide-on-xxs{
+.hide{
   display: none;
 }
-.show-on-xxs{
+.show{
   display: block;
 }
 
