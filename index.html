@@ -14,16 +14,24 @@
 	<p>Easy to use, mobile first responsive x-column grid. Click a column to see the applied classes.</p>
 	<dl>
 		<dt>col-X</dt>
-		<dd><b>Default width</b>: Define this first. It is always used if non of the following classes is assigned.</dd>
+		<dd><b>Default width</b>: For all widthes</dd>
 	  <dt>xs-col-X</dt>
 	  <dd>For very small devices; Smartphones.</dd>
 	  <dt>sd-col-X</dt>
 	  <dd>For small devices; Big Smartphones, Tablets.</dd>
 	  <dt>md-col-X</dt>
 	  <dd>For medium devices; Notebooks, Normal Desktops.</dd>
-	  <dt>lg-col-X</dt>
+	  <dt>ld-col-X</dt>
 	  <dd>For large devices; Big Desktops, TVs.</dd>
 	</dl>
+	
+	<div class="row">
+		<h2>Hide-on-Classes</h2>
+		<div class="col-3 hide-on-xs show-on-sd">Not on XS</div>
+		<div class="col-3 hide-on-sd show-on-md">ALL, but SD</div>
+		<div class="col-3 hide-on-md show-on-ld">ALL, but MD</div>
+		<div class="col-3 hide-on-xs show-on-ld">Only on LD</div>
+	</div>
 
 	<div class="row">
 		<h2>Simple 2 Column Layout</h2>
