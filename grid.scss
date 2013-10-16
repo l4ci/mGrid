@@ -8,8 +8,14 @@
  * 
  **/ 
 
-$grid-columns: 12 	!default; 	// 12, 16, whatever you like
-$grid-gutter:  20px !default; 	// px only here
+$grid-columns : 12 	   !default; 	// 12, 16, whatever you like
+$grid-gutter  : 20px    !default; 	// px only here
+
+// Define Breakpoints width
+$breakpoint-sd: 480px  !default;
+$breakpoint-md: 992px  !default;
+$breakpoint-ld: 1200px !default;
+
 
 /**
  * Calculate column width in %
@@ -65,6 +71,11 @@ $grid-gutter:  20px !default; 	// px only here
     padding-right: 0;
   }
 }
+// No Padding on full width column
+[class*='col-#{$grid-columns}'] {
+  padding-right: 0;
+}
+
 /**
  * Default, Extra Small Devices 
  * (Phones, below 480px)
@@ -89,7 +100,7 @@ $grid-gutter:  20px !default; 	// px only here
  * Small devices
  * (tablets, 480px and up)
  */
-@media (min-width: 480px){
+@media (min-width: $breakpoint-sd){
   .container{
     max-width: 100%;
   }
@@ -111,7 +122,7 @@ $grid-gutter:  20px !default; 	// px only here
  * Medium devices
  * (desktops, 992px and up)
  */
-@media (min-width: 992px){
+@media (min-width: $breakpoint-md){
   
   .container{
     max-width: 970px;
@@ -135,7 +146,7 @@ $grid-gutter:  20px !default; 	// px only here
  * Large devices
  * (large desktops, 1200px and up)
  */
-@media (min-width: 1200px){
+@media (min-width: $breakpoint-ld){
   
   .container{
     max-width: 1170px;
