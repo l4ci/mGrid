@@ -66,14 +66,15 @@ $grid-gutter:  20px !default; 	// px only here
   }
 }
 
-/* Default and Extra small devices (phones, 768px and up) */
+/* Default */
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
   	width: calccol($i);
   }
 }
 
-@media (max-width: 480px){
+/* Extra small devices (phones, 768px and up) */
+@media (min-width: 480px){
   .container{
     max-width: 100%;
   }
