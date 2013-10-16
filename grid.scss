@@ -66,17 +66,31 @@ $grid-gutter:  20px !default; 	// px only here
   }
 }
 
-/* Default */
+/* Default (anything without extra class or below 480px )*/
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
   	width: calccol($i);
   }
 }
+.hide-on-xxs{
+  display: none;
+}
+.show-on-xxs{
+  display: block;
+}
 
-/* Extra small devices (phones, 768px and up) */
+
+/* Extra small devices (phones, 480px and up) */
 @media (min-width: 480px){
   .container{
     max-width: 100%;
+  }
+  
+  .hide-on-xs{
+    display: none;
+  }
+  .show-on-xs{
+    display: block;
   }
 
   @for $i from 1 through $grid-columns {
@@ -92,16 +106,31 @@ $grid-gutter:  20px !default; 	// px only here
     max-width: 750px;
   }
 
+  .hide-on-sd{
+    display: none;
+  }
+  .show-on-sd{
+    display: block;
+  }
+
   @for $i from 1 through $grid-columns {
     .sd-col-#{$i} {
     	width: calccol($i);
     }
 	}
 }
+
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px){// and (max-width: 1199px){
   .container{
     max-width: 970px;
+  }
+  
+  .hide-on-md{
+    display: none;
+  }
+  .show-on-md{
+    display: block;
   }
 
   @for $i from 1 through $grid-columns {
@@ -110,14 +139,22 @@ $grid-gutter:  20px !default; 	// px only here
     }
 	}
 }
+
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px){
   .container{
     max-width: 1170px;
   }
   
+  .hide-on-ld{
+    display: none;
+  }
+  .show-on-ld{
+    display: block;
+  }
+
   @for $i from 1 through $grid-columns {
-    .lg-col-#{$i} {
+    .ld-col-#{$i} {
     	width: calccol($i);
     }
 	}
