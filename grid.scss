@@ -8,14 +8,23 @@
  * 
  **/ 
 
-$grid-columns : 12 	   !default; 	// 12, 16, whatever you like
+$grid-columns : 12 	    !default; 	// 12, 16, whatever you like
 $grid-gutter  : 20px    !default; 	// px only here
 
-// Define Breakpoints width
-$breakpoint-sd: 480px  !default;
-$breakpoint-md: 992px  !default;
-$breakpoint-ld: 1200px !default;
+/**
+ * Breakpoints
+ */
 
+// Define min width
+$breakpoint-s-min:   500px  !default;
+$breakpoint-m-min:   750px  !default;
+$breakpoint-l-min:  1000px  !default;
+$breakpoint-xl-min: 1500px  !default;
+
+// Calculate max width
+$breakpoint-s-max: $breakpoints-m - 1;
+$breakpoint-m-max: $breakpoints-l - 1;
+$breakpoint-l-max: $breakpoints-xl - 1;
 
 /**
  * Calculate column width in %
@@ -60,10 +69,11 @@ $breakpoint-ld: 1200px !default;
 }
 
 [class*='col-'] {
+  position: relative;
+  min-height: 1px;
   text-align: left;
   display: block;
   float: left;
-  width: 100%;
   margin: 0 0;
   padding-right: $grid-gutter;
 
@@ -71,21 +81,20 @@ $breakpoint-ld: 1200px !default;
     padding-right: 0;
   }
 }
-// No Padding on full width column
-[class*='col-#{$grid-columns}'] {
-  padding-right: 0;
-}
+
 
 /**
  * Default, Extra Small Devices 
- * (Phones, below 480px)
+ * (Phones)
  */
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
   	width: calccol($i);
+    if $i == $grid-columns { padding-right:0; }
   }
   .xs-col-#{$i} {
     width: calccol($i);
+    if $i == $grid-columns { padding-right:0; }
   }
 }
 
@@ -98,22 +107,48 @@ $breakpoint-ld: 1200px !default;
 
 /**
  * Small devices
- * (tablets, 480px and up)
+ * (tablets, big smartphones)
  */
-@media (min-width: $breakpoint-sd){
+@media (min-width: $breakpoint-s-min){
   .container{
     max-width: 100%;
   }
-  .hide-on-sd{
+  .hide-on-s{
     display: none;
   }
-  .show-on-sd{
+  .show-on-s{
     display: block;
   }
 
   @for $i from 1 through $grid-columns {
-    .sd-col-#{$i} {
+    .s-col-#{$i} {
       width: calccol($i);
+      if $i == $grid-columns { padding-right:0; }
+    }
+  }
+}
+
+/**
+ * Medium devices
+ * (laptop, tablets)
+ */
+@media (min-width: $breakpoint-m-min){
+  
+  .container{
+    max-width: 970px;
+  }
+
+  .hide-on-m{
+    display: none;
+  }
+  .show-on-m{
+    display: block;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .m-col-#{$i} {
+      width: calccol($i);
+      if $i == $grid-columns { padding-right:0; }
     }
   }
 }
@@ -122,22 +157,23 @@ $breakpoint-ld: 1200px !default;
  * Medium devices
  * (desktops, 992px and up)
  */
-@media (min-width: $breakpoint-md){
+@media (min-width: $breakpoint-l-min){
   
   .container{
     max-width: 970px;
   }
 
-  .hide-on-md{
+  .hide-on-l{
     display: none;
   }
-  .show-on-md{
+  .show-on-l{
     display: block;
   }
 
   @for $i from 1 through $grid-columns {
-    .md-col-#{$i} {
+    .l-col-#{$i} {
     	width: calccol($i);
+      if $i == $grid-columns { padding-right:0; }
     }
 	}
 }
@@ -146,22 +182,23 @@ $breakpoint-ld: 1200px !default;
  * Large devices
  * (large desktops, 1200px and up)
  */
-@media (min-width: $breakpoint-ld){
+@media (min-width: $breakpoint-xl-min){
   
   .container{
     max-width: 1170px;
   }
   
-  .hide-on-ld{
+  .hide-on-xl{
     display: none;
   }
-  .show-on-ld{
+  .show-on-xl{
     display: block;
   }
 
   @for $i from 1 through $grid-columns {
-    .ld-col-#{$i} {
+    .xl-col-#{$i} {
     	width: calccol($i);
+      if $i == $grid-columns { padding-right:0; }
     }
 	}
 }
