@@ -2,14 +2,14 @@
  *
  * mGrid
  * Basic responsive mobile first x-column grid system.
- * 
+ *
  * @url https://github.com/l4ci/mGrid
  * @author Volker Otto <hello@volkerotto.net>
- * 
- **/ 
+ *
+ **/
 
 $grid-columns : 12 	    !default; 	// 12, 16, whatever you like
-$grid-gutter  : 20px    !default; 	// px only here
+$grid-gutter  : 30px    !default; 	// px only here
 
 /**
  * Breakpoints
@@ -22,13 +22,14 @@ $breakpoint-l-min:  1000px  !default;
 $breakpoint-xl-min: 1500px  !default;
 
 // Calculate max width
+$breakpoint-xs-max: $breakpoint-s-min - 1;
 $breakpoint-s-max: $breakpoint-m-min - 1;
 $breakpoint-m-max: $breakpoint-l-min - 1;
 $breakpoint-l-max: $breakpoint-xl-min - 1;
 
 /**
  * Calculate column width in %
- * @param  {integer} $columns 
+ * @param  {integer} $columns
  * @return {integer} %
  */
 @function calccol($columns){
@@ -90,7 +91,7 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
 
 
 /**
- * Default, Extra Small Devices 
+ * Default, Extra Small Devices
  * (Phones)
  */
 @for $i from 1 through $grid-columns {
@@ -100,7 +101,9 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
   }
   .xs-col-#{$i} {
     width: calccol($i);
-    @if $i == $grid-columns { padding-right:0; }
+    @media (max-width: $breakpoint-xs-max){
+	    @if $i == $grid-columns { padding-right:0; }
+	  }
   }
 }
 
@@ -129,7 +132,9 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
   @for $i from 1 through $grid-columns {
     .s-col-#{$i} {
       width: calccol($i);
-      @if $i == $grid-columns { padding-right:0; }
+      @media (max-width: $breakpoint-s-max){
+      	@if $i == $grid-columns { padding-right:0; }
+      }
     }
   }
 }
@@ -139,9 +144,9 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
  * (laptop, tablets)
  */
 @media (min-width: $breakpoint-m-min){
-  
+
   .container{
-    max-width: 970px;
+    max-width: 800px;
   }
 
   .hide-on-m{
@@ -154,7 +159,9 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
   @for $i from 1 through $grid-columns {
     .m-col-#{$i} {
       width: calccol($i);
-      @if $i == $grid-columns { padding-right:0; }
+      @media (max-width: $breakpoint-m-max){
+	      @if $i == $grid-columns { padding-right:0; }
+	    }
     }
   }
 }
@@ -164,9 +171,9 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
  * (desktops, 992px and up)
  */
 @media (min-width: $breakpoint-l-min){
-  
+
   .container{
-    max-width: 970px;
+    max-width: 1000px;
   }
 
   .hide-on-l{
@@ -179,21 +186,23 @@ $breakpoint-l-max: $breakpoint-xl-min - 1;
   @for $i from 1 through $grid-columns {
     .l-col-#{$i} {
     	width: calccol($i);
-      @if $i == $grid-columns { padding-right:0; }
+    	@media (max-width: $breakpoint-l-max){
+      	@if $i == $grid-columns { padding-right:0; }
+      }
     }
 	}
 }
 
 /**
  * Large devices
- * (large desktops, 1200px and up)
+ * (large desktops)
  */
 @media (min-width: $breakpoint-xl-min){
-  
+
   .container{
-    max-width: 1170px;
+    max-width: 1400px;
   }
-  
+
   .hide-on-xl{
     display: none;
   }
