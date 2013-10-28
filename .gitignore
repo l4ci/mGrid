@@ -6,7 +6,6 @@ sftp-config-alt.json
 sftp-settings.json
 *.svn
 *.hg
-.DS_Store
 Thumbs.db
 desktop.ini
 codekit-config.json

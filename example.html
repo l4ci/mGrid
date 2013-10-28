@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="container">
-	
+
 	<h1>mGrid - Example</h1>
 	<p>Easy to use, mobile first responsive x-column grid. Click a column to see the applied classes.</p>
 	<dl>
@@ -35,7 +35,7 @@
 	  <dt>xl-col-X</dt>
 	  <dd>For large devices; Big Desktops, TVs.</dd>
 	</dl>
-	
+
 	<div class="row">
 		<h2>Hide-on-Classes</h2>
 		<div class="col-3 hide-on-xs show-on-s">Not on XS</div>
@@ -65,12 +65,12 @@
 		<div class="col-12 xs-col-6 s-col-4 m-col-3">100% - 30% on >s - 25% > m</div>
 		<div class="col-12 xs-col-6 s-col-12 m-col-3">100% - 100% on >s - 25% > m</div>
 	</div>
-	
+
 	<div class="row">
 		<h2>Nesting columns</h2>
 		<div class="col-6">
-			<div class="col-6">50%</div>
-			<div class="col-6">50%</div>
+				<div class="col-6">50%</div>
+				<div class="col-6">50%</div>
 		</div>
 		<div class="col-6">50%</div>
 	</div>
@@ -108,7 +108,7 @@
 		<div class="col-12">12</div>
 	</div>
 </div>
-	
+
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script>
 	/* Write class in Title */
@@ -117,7 +117,7 @@
 	});
 	/* Show class in html onclick */
 	$('.row div').click(function() {
-		  $(this).html('<span>'+$(this).attr('class')+'</span>');	
+		  $(this).html('<span>'+$(this).attr('class')+'</span>');
 	});
 	</script>
 </body>
