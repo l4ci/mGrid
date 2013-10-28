@@ -24,8 +24,8 @@
 	<h1>mGrid - Example</h1>
 	<p>Easy to use, mobile first responsive x-column grid. Click a column to see the applied classes.</p>
 	<dl>
-		<dt>col-X</dt>
-		<dd><b>Default width</b>: For all widthes</dd>
+		<dt>col-X / xs-col-X</dt>
+		<dd><b>Default width</b>: For all widthes or extra small devices when used with another following class.</dd>
 	  <dt>s-col-X</dt>
 	  <dd>For very small devices; Smartphones.</dd>
 	  <dt>m-col-X</dt>
@@ -73,6 +73,14 @@
 				<div class="col-6">50%</div>
 		</div>
 		<div class="col-6">50%</div>
+	</div>
+
+	<div class="row">
+		<h2>Offset</h2>
+		<div class="xs-col-3 m-col-4 m-offset-4">col 4 - offset 4</div>
+		<div class="xs-col-3 m-col-2 m-offset-4">col 2 - offset 4</div>
+		<div class="xs-col-3 m-col-2">col 2 - no offset</div>
+		<div class="xs-col-3 m-col-4 m-offset-4">col 4 - offset 4</div>
 	</div>
 
 	<div class="row">

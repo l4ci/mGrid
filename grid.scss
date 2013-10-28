@@ -108,6 +108,9 @@ $breakpoint-l-max:  $breakpoint-xl-min - 1 !default;
   .xs-col-#{$i} {
     width: calccol($i);
   }
+  .xs-offset-#{$i} {
+  	margin-left: calccol($i);
+  }
 }
 
 .hide-on-xs{
@@ -136,6 +139,9 @@ $breakpoint-l-max:  $breakpoint-xl-min - 1 !default;
     .s-col-#{$i} {
       width: calccol($i);
     }
+    .s-offset-#{$i} {
+	  	margin-left: calccol($i);
+	  }
   }
 }
 
@@ -160,6 +166,9 @@ $breakpoint-l-max:  $breakpoint-xl-min - 1 !default;
     .m-col-#{$i} {
       width: calccol($i);
     }
+    .m-offset-#{$i} {
+	  	margin-left: calccol($i);
+	  }
   }
 }
 
@@ -184,6 +193,9 @@ $breakpoint-l-max:  $breakpoint-xl-min - 1 !default;
     .l-col-#{$i} {
     	width: calccol($i);
     }
+    .l-offset-#{$i} {
+	  	margin-left: calccol($i);
+	  }
 	}
 }
 
@@ -208,5 +220,8 @@ $breakpoint-l-max:  $breakpoint-xl-min - 1 !default;
     .xl-col-#{$i} {
     	width: calccol($i);
     }
+    .xl-offset-#{$i} {
+	  	margin-left: calccol($i);
+	  }
 	}
 }
