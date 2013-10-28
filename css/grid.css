@@ -267,7 +267,6 @@
     width: 100%; } }
 /**
  * Large devices
- * (desktops, 992px and up)
  */
 @media (min-width: 1000px) {
   .container {
@@ -327,9 +326,9 @@
  * Extra Large devices
  * (large desktops)
  */
-@media (min-width: 1500px) {
+@media (min-width: 1250px) {
   .container {
-    max-width: 1400px; }
+    max-width: 1160px; }
 
   .hide-on-xl {
     display: none; }
